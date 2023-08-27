@@ -1,0 +1,14 @@
+#!/bin/bash
+#PBS -N plot_ct_comp
+#PBS -o /rds/general/user/art4017/home/snRNAseq_analysis/log/plot_ct_comp.out
+#PBS -e /rds/general/user/art4017/home/snRNAseq_analysis/log/plot_ct_comp.err
+#PBS -l select=1:ncpus=1:mem=20gb
+#PBS -l walltime=12:00:00
+
+cd /rds/general/user/art4017/home/snRNAseq_analysis/
+
+module purge
+module add tools/prod
+module add R/4.2.1-foss-2022a
+
+Rscript src/plot_celltype_composition.R
